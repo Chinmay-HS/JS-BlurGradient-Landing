@@ -1,0 +1,103 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 20vh;
+  min-height: 100vh;
+}
+
+.mainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.bigTitle1, .bigTitle2 {
+  font-size: 3rem;
+  margin: 0; /* Removes default margin */
+}
+
+.bigTitle1 {
+  font-family: SerifStuff;
+  margin-bottom: 0.5rem; /* Adjusts spacing between the titles */
+}
+
+.bigTitle2 {
+  font-family: Nord;
+}
+
+.research {
+  margin: 2rem 0;
+  border-radius: 3vh;
+  font-size: 1.5rem;
+  font-family: SerifStuff, Arial, sans-serif;
+  padding: 0 1rem;
+}
+
+.line {
+  background-color: black;
+  height: 50vh;
+  width: 0.5px;
+}
+
+/* Glow Effects */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  border-radius: 50%;
+  filter: blur(90px);
+  animation: infinite 7s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
+}
+
+body::before {
+  background: var(--third-glow);
+  width: 50vw;
+  height: 50vw;
+  margin-left: -200px;
+  top: calc(50vh - 25vw);
+  left: 50vw;
+  animation-name: animateBefore;
+}
+
+body::after {
+  background: var(--secondary-glow);
+  width: 500px;
+  height: 700px;
+  top: calc(50vh - 25vw);
+  left: calc(50vw - 25vw);
+  animation-name: animateAfter;
+}
+
+@keyframes animateBefore {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(200px) scale(0.8);
+  }
+}
+
+@keyframes animateAfter {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-250px) scale(1.2);
+  }
+}
+
+@font-face {
+  font-family: Nord;
+  src: url(../public/fonts/Nord-Bold.ttf);
+}
+
+@font-face {
+  font-family: SerifStuff;
+  src: url(../public/fonts/BigCaslonFB-Regular.ttf);
+}
