@@ -18,6 +18,7 @@
 .bigTitle1, .bigTitle2 {
   font-size: 3rem;
   margin: 0; /* Removes default margin */
+  color: beige;
 }
 
 .bigTitle1 {

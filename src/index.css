@@ -1,36 +1,40 @@
-:root{
-
-  body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
+:root {
   --secondary-glow: conic-gradient(
     from 10deg at 50% 50%,
-    #eb7494 0deg,
-    #ae77b2 55deg,
-    #97b5da 120deg,
-    #0099ca 160deg,
+    #ff7e57 0deg,    /* Soft orange */
+    #ffb27e 55deg,   /* Light orange */
+    #5f9bd1 120deg,  /* Soft blue */
+    #003f74 160deg,  /* Darker blue */
     transparent 360deg
   );
 
   --third-glow: conic-gradient(
     from 90deg at 50% 50%,
-    #ff8b7e 0deg,
-    #e24e6b 160deg,
-    #7ed2da 120deg,
-    #8bdce0 55deg,
+    #ff9966 0deg,    /* Warm orange */
+    #ffaa80 55deg,   /* Peachy orange */
+    #4682b4 120deg,  /* Steel blue */
+    #004d7a 160deg,  /* Deep ocean blue */
     transparent 360deg
   );
-  
 }
-  
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #0a1a2b; /* Dark blue background */
+  color: white; /* Optional text color for contrast */
+}
+
+.gradient-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--secondary-glow); /* Apply the gradient */
+  mix-blend-mode: screen; /* Blends gradient with dark blue */
+  pointer-events: none; /* Prevents interference with interactions */
+}
